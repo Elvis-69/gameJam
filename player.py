@@ -15,7 +15,9 @@ class Player(pygame.sprite.Sprite):
 			self.attack = 10
 			self.velocity = 5
 			self.all_projectiles = pygame.sprite.Group(self)
-			self.image = pygame.image.load('ressources/images/perso-10.png')
+#			self.image = pygame.image.load('ressources/images/perso-10.png')
+			
+			self.image = pygame.image.load('ressources/images/persoA-10.png')
 
 
 			self.rect = self.image.get_rect()

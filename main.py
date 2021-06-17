@@ -16,12 +16,26 @@ running = True
 
 #boucle pour laisser la fenetre ouverte
 
+currentFrame = 'ressources/images/perso-10.png'
+
 while running:
 	#appliquer l'arriere plan
 	screen.blit(background, (0, 0))
 
 	# appliquer joueur
-	screen.blit(game.player.image, game.player.rect)
+	
+	allFrame = pygame.image.load(currentFrame)
+	
+	screen.blit(allFrame, game.player.rect)
+	if (currentFrame == 'ressources/images/perso-10.png'):
+        	currentFrame = 'ressources/images/persoB-10.png'
+
+	else:
+        	currentFrame = 'ressources/images/perso-10.png'
+        	
+	pygame.display.update()
+	
+#	screen.blit(game.player.image, game.player.rect)
 
 	#image projectile
 	game.player.all_projectiles.draw(screen)
