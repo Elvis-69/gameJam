@@ -33,7 +33,7 @@ while running:
 	else:
         	currentFrame = 'ressources/images/perso-10.png'
         	
-	pygame.display.update()
+#	pygame.display.update()
 	
 	screen.blit(game.player.image, game.player.rect)
 
@@ -42,8 +42,15 @@ while running:
 	for projectile in game.player.all_projectiles:
 		projectile.move()
 		
+	# recuperer les monstres
+	for monster in game.all_monsters :
+		monster.forward()
+		
 	#image projectile (appliquer l'ensemble des images du groupe)	
 	game.player.all_projectiles.draw(screen)
+	
+	#image monster (appliquer l'ensemble des images du groupe)
+	game.all_monsters.draw(screen)
 
 	# verifier direction PJ
 	if game.pressed.get(pygame.K_RIGHT) and game.player.rect.x + game.player.rect.width < screen.get_width():
