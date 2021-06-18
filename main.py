@@ -35,9 +35,14 @@ while running:
         	
 	pygame.display.update()
 	
-#	screen.blit(game.player.image, game.player.rect)
+	screen.blit(game.player.image, game.player.rect)
 
-	#image projectile
+
+	# Recuperer les projectiles du player
+	for projectile in game.player.all_projectiles:
+		projectile.move()
+		
+	#image projectile (appliquer l'ensemble des images du groupe)	
 	game.player.all_projectiles.draw(screen)
 
 	# verifier direction PJ
