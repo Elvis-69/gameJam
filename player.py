@@ -1,5 +1,4 @@
 import pygame
-#from projectile import Projectile
 
 def load_image(name):
     image = pygame.image.load(name)
@@ -87,42 +86,6 @@ class Projectile(pygame.sprite.Sprite):
 			# Supprimer le projectile
 			self.remove()
 			
-	
-"""-----------------------------------------------------------------------------
-
-		
-	def __init__(self, posx_end, posy_end):
-		
-		pygame.sprite.Sprite.__init__(self) 
-		self.image = pygame.image.load('ressources/images/tirAqua.png')
-		player = Player()
-		self.posx_end = posx_end
-		self.posy_end = posy_end
-		self.step = 5
-
-		self.longx = self.posx_end - player.get_posx()
-		self.longy = self.posy_end - player.get_posy()
-		
-		self.rect = self.image.get_rect()
-		self.rect.x = player.get_posx()
-		self.rect.y = player.get_posy()
-
-
-	def compute_new_pos(self):
-		""" """Mets les positions du projectile à jour sur le segment entre
-		     sur le segment entre le joueur et la souris""""""
-		self.posx += self.step*math.cos(math.atan2(self.longy, self.longx))
-		self.posy += self.step*math.sin(math.atan2(self.longy, self.longx))
-		self.ttl += 1
-		print("Compute position projectile")
-		return self.posx, self.posy
-
-	def draw(self, screen):
-		""" """Dessine le projectile sur la surface""" """
-		print("Drawing new projectile")
-		screen.blit(self.image, self.compute_new_pos())"""
-
-    
 
 
 

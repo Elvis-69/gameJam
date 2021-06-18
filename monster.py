@@ -1,5 +1,6 @@
 import pygame
 import random
+from sounds import SoundManager
 
 class Monster(pygame.sprite.Sprite):
 
@@ -22,7 +23,8 @@ class Monster(pygame.sprite.Sprite):
 		self.health -= amount
 		
 		# Verifier si vie <= 0
-		if self.health <= 0 :		
+		if self.health <= 0 :	
+			game.sound_manager.play('mort')	
 			# reapparait comme nouveau monstre
 			self.rect.x = 1000 + random.randint(0, 100)
 			self.rect.y = 100 + random.randint(0, 700)

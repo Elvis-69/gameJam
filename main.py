@@ -1,6 +1,7 @@
 import pygame
 pygame.init()
 from game import Game
+from sounds import SoundManager
 
 #fenetre du jeu
 pygame.display.set_caption("psycoatak")
@@ -21,6 +22,7 @@ currentFrame = 'ressources/images/perso-10.png'
 while running:
 	#appliquer l'arriere plan
 	screen.blit(background, (0, 0))
+	#game.sound_manager.play('zik')
 
 	# appliquer joueur
 	
@@ -85,6 +87,7 @@ while running:
 			#detecter espace
 			if event.key == pygame.K_SPACE:
 				game.player.launch_projectile()
+				game.sound_manager.play('tir')
 
 		elif event.type == pygame.KEYUP:
 			game.pressed[event.key] = False
