@@ -1,0 +1,23 @@
+class Game :
+	screen = None
+	aliens = []
+	
+	def __init__(self, width, height):
+		pygame.init()
+		self.width = width
+		self.height = height
+		self.screen = pygame.display.set_mode((width, height))
+		self.clock = pygame.time.Clock()
+		done = False
+		
+		while not done:
+			for event in pygame.event.get():
+				if event.type == pygame == pygame.QUIT:
+					done = True
+					
+		pygame.display.flip()
+		self.clock.tick(60)
+		self.screen.fill((0, 0, 0))
+		
+
+        }
